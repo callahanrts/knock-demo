@@ -7,3 +7,4 @@ rails s
 
 1. Open the `client/index.html` page
 
+![alt screenshot](screenshot.png)

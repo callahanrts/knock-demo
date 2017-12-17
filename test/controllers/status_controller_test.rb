@@ -56,7 +56,7 @@ class StatusControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil jwt
 
     # Generating an auth token seems to use a timestamp, so wait a second
-    # before generating another one
+    # before generating another one to get 2 unique tokens
     sleep 1
 
     get user_status_index_url, headers: { "Authorization" => "Bearer #{log_in}"}

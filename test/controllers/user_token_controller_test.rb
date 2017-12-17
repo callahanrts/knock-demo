@@ -8,16 +8,20 @@ class UserTokenControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @user = User.create(email: "1@user.com", password: "password")
-  end
 
-  test "should log in a user and return a non-nil jwt" do
     post user_token_url({
       auth: {
         email: @user.email,
         password: @user.password
       }
     })
+  end
+
+  test "the response is successful" do
     assert_response :success
+  end
+
+  test 'it returns a non-nil jwt' do
     assert_not_nil parse_jwt
   end
 
